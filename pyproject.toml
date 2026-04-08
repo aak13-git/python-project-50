@@ -15,5 +15,7 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["gendiff"]
 
+
 [project.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
+read-file = "gendiff.scripts.read_file:read_file"
