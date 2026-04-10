@@ -15,7 +15,22 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["gendiff"]
 
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]
+
 
 [project.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
 read-file = "gendiff.scripts.read_file:read_file"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_functions = ['test_*']
+addopts = [
+  "-vv",				        # подробный вывод хода теста
+  "--import-mode=importlib"  	# меньше проблем с импортами
+]

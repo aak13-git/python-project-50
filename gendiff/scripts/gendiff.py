@@ -1,4 +1,5 @@
 import argparse
+
 from gendiff.scripts.read_file import read_file
 
 
@@ -19,7 +20,7 @@ def main():
     return diff_result
 
 
-def generate_diff(path_1:str, path_2:str):
+def generate_diff(path_1: str, path_2: str):
     file_1 = read_file(path_1)
     file_2 = read_file(path_2)
     all_keys = sorted(file_1.keys() | file_2.keys())

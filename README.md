@@ -1,4 +1,12 @@
-### Hexlet tests and linter status:
+# Hexlet tests and linter status:
+
 [![Actions Status](https://github.com/aak13-git/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/aak13-git/python-project-50/actions)
 
+# python-package
+
+[![Github Actions Status](https://github.com/hexlet-boilerplates/python-package/workflows/Python%20CI/badge.svg)](https://github.com/hexlet-boilerplates/python-package/actions)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_python-package&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_python-package)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_python-package&metric=coverage)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_python-package)
+
+# asciinema
 [![asciicast](https://asciinema.org/a/KbZoPRqiYhvVp8hd.svg)](https://asciinema.org/a/KbZoPRqiYhvVp8hd)

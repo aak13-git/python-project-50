@@ -7,6 +7,8 @@ def read_file(path: str) -> dict:
 
     return parsed_file
 
+
 if __name__ == '__main__':
+
     path = str(input('Введите путь до файла: '))
     read_file(path)
