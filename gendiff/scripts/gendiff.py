@@ -1,6 +1,7 @@
 import argparse
 
 from gendiff.scripts.read_file import read_file
+from gendiff.scripts.stylish import stylish
 
 
 def main():
@@ -20,28 +21,37 @@ def main():
     return diff_result
 
 
-def generate_diff(path_1: str, path_2: str):
+def diff(file_1, file_2):
+    node = {}
+    union_keys = sorted(set(file_1.keys()) | set(file_2.keys()))
+    for key in union_keys:
+        val1 = file_1.get(key)
+        val2 = file_2.get(key)
+        if isinstance(val1, dict) and isinstance(val2, dict):
+            node[key] = {
+                'status': 'nested',
+                'children': diff(val1, val2)
+            }
+        elif val1 == val2:
+            node[key] = {'status': 'same', 'value': val1}
+        elif key in file_1 and key in file_2:
+            node[key] = {
+                'status': 'updated',
+                'old_value': val1,
+                'new_value': val2
+            }
+        elif key in file_1:
+            node[key] = {'status': 'removed', 'value': val1}
+        else:
+            node[key] = {'status': 'added', 'value': val2}
+    return node
+
+
+def generate_diff(path_1: str, path_2: str, format_name='stylish'):
     file_1 = read_file(path_1)
     file_2 = read_file(path_2)
-    all_keys = sorted(file_1.keys() | file_2.keys())
-    result_lines = []
-
-    for key in all_keys:
-        in_first = key in file_1
-        in_second = key in file_2
-
-        if in_first and in_second:
-            if file_1[key] == file_2[key]:
-                result_lines.append(f"    {key}: {file_1[key]}")
-            else:
-                result_lines.append(f"  - {key}: {file_1[key]}")
-                result_lines.append(f"  + {key}: {file_2[key]}")
-        elif in_first:
-            result_lines.append(f"  - {key}: {file_1[key]}")
-        else:
-            result_lines.append(f"  + {key}: {file_2[key]}")
-
-    return "{\n" + "\n".join(result_lines) + "\n}"
+    gen_diff = diff(file_1, file_2)
+    return '{\n' + '\n'.join(stylish(gen_diff)) + '\n}'
 
 
 if __name__ == '__main__':
