@@ -10,3 +10,4 @@
 
 # asciinema
 [![asciicast](https://asciinema.org/a/KbZoPRqiYhvVp8hd.svg)](https://asciinema.org/a/KbZoPRqiYhvVp8hd)
+[![asciicast](https://asciinema.org/a/9uu06PrD56TcdI2w.svg)](https://asciinema.org/a/9uu06PrD56TcdI2w)
