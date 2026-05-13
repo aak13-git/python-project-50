@@ -1,5 +1,6 @@
 import argparse
 
+from gendiff.scripts.plain import format_plain
 from gendiff.scripts.read_file import read_file
 from gendiff.scripts.stylish import stylish
 
@@ -17,7 +18,7 @@ def main():
     )
 
     args = parser.parse_args()
-    diff_result = generate_diff(args.first_file, args.second_file)
+    diff_result = generate_diff(args.first_file, args.second_file, args.format)
     return diff_result
 
 
@@ -51,7 +52,10 @@ def generate_diff(path_1: str, path_2: str, format_name='stylish'):
     file_1 = read_file(path_1)
     file_2 = read_file(path_2)
     gen_diff = diff(file_1, file_2)
-    return '{\n' + '\n'.join(stylish(gen_diff)) + '\n}'
+    if format_name == 'stylish':
+        return '{\n' + '\n'.join(stylish(gen_diff)) + '\n}'
+    elif format_name == 'plain':
+        return '\n' + '\n'.join(format_plain(gen_diff)) + '\n'
 
 
 if __name__ == '__main__':
