@@ -1,5 +1,6 @@
 import argparse
 
+from gendiff.scripts.json import format_json
 from gendiff.scripts.plain import format_plain
 from gendiff.scripts.read_file import read_file
 from gendiff.scripts.stylish import stylish
@@ -56,6 +57,8 @@ def generate_diff(path_1: str, path_2: str, format_name='stylish'):
         return '{\n' + '\n'.join(stylish(gen_diff)) + '\n}'
     elif format_name == 'plain':
         return '\n' + '\n'.join(format_plain(gen_diff)) + '\n'
+    elif format_name == 'json':
+        return format_json(gen_diff)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
+
 import yaml
+
 
 def read_file(path: str):
     permission = Path(path).suffix
@@ -12,11 +14,6 @@ def read_file(path: str):
     elif permission in ('.yaml', '.yml'):
         with open(path) as file:
             parsed_file = yaml.safe_load(file)
-            # formatted_file = parsed_file.splitline()
-            # result_dict = {}
-            # for line in formatted_file:
-            #     key, value = line.split(':', 1)
-            #     result_dict[key.strip()] = value.strip()
 
         return parsed_file
 
