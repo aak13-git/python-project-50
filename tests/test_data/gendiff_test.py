@@ -5,6 +5,7 @@ path_2 = './src/file2.json'
 path_1_y, path_2_y = './src/file1.yaml', './src/file2.yaml'
 new_path_1, new_path_2 = './src/new_file1.yaml', './src/new_file2.yaml'
 
+
 def test_gendiff_json():
     assert generate_diff(path_1, path_2) == """{
   - follow: false
@@ -15,6 +16,7 @@ def test_gendiff_json():
   + verbose: true
 }"""
 
+
 def test_gendiff_yaml():
     assert generate_diff(path_1_y, path_2_y) == """{
   - follow: false
@@ -24,6 +26,7 @@ def test_gendiff_yaml():
   + timeout: 20
   + verbose: true
 }"""
+
 
 def test_gendiff_yaml_new():
     assert generate_diff(new_path_1, new_path_2, 'stylish') == """{
@@ -71,6 +74,7 @@ def test_gendiff_yaml_new():
     }
 }"""
 
+
 def test_gendiff_plain():
     assert generate_diff(new_path_1, new_path_2, 'plain') == """
 Property 'common.follow' was added with value: false
@@ -85,6 +89,7 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]
 """
+
 
 def test_gendiff_format_json():
     assert generate_diff(new_path_1, new_path_2, 'json') == """[
