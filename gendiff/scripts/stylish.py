@@ -33,7 +33,9 @@ def stylish(node, level=0):
                 )}"
             )
             lines.append(
-                f"{indent}  + {key}: {format_value(item['new_value'])}"
+                f"{indent}  + {key}: {format_value(
+                    item['new_value'], level + 1
+                )}"
             )
         elif status == 'added':
             lines.append(
@@ -44,3 +46,4 @@ def stylish(node, level=0):
                 f"{indent}  - {key}: {format_value(item['value'], level + 1)}"
             )
     return lines
+
