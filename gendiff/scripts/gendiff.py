@@ -20,7 +20,7 @@ def main():
 
     args = parser.parse_args()
     diff_result = generate_diff(args.first_file, args.second_file, args.format)
-    return diff_result
+    print(diff_result)
 
 
 def diff(file_1, file_2):
