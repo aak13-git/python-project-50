@@ -56,7 +56,7 @@ def generate_diff(path_1: str, path_2: str, format_name='stylish'):
     if format_name == 'stylish':
         return '{\n' + '\n'.join(stylish(gen_diff)) + '\n}'
     elif format_name == 'plain':
-        return '\n' + '\n'.join(format_plain(gen_diff)) + '\n'
+        return '\n'.join(format_plain(gen_diff))
     elif format_name == 'json':
         return format_json(gen_diff)
 
