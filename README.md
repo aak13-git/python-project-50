@@ -1,3 +1,7 @@
+# Project description
+
+my project performs a comparison of two transferred json or yaml files and performs formatting. 3 types of formatting are supported: 'stylish', 'plain' and 'json'.  By default, 'stylish' formatting is performed. To do this, enter 'gendiff' into the terminal and specify the file paths. If you want to call a different format, you must enter 'gendiff -f' into the terminal, then specify the format and then pass the file paths,' an example of such a call is 'gendiff -f plain ./src/new_file1.yaml./src/new_file2.yaml'
+
 # Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/aak13-git/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/aak13-git/python-project-50/actions)
