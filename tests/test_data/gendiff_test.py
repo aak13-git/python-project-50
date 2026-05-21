@@ -211,6 +211,7 @@ def test_gendiff_format_json():
 
 
 def test_gendiff():
+    """test функции gendiff"""
     assert generate_diff(new_path_1, new_path_2) == """{
     common: {
       + follow: false
