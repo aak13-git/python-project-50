@@ -1,9 +1,9 @@
 from gendiff.scripts.gendiff import generate_diff
 
-path_1 = './src/file1.json'
-path_2 = './src/file2.json'
-path_1_y, path_2_y = './src/file1.yaml', './src/file2.yaml'
-new_path_1, new_path_2 = './src/new_file1.yaml', './src/new_file2.yaml'
+path_1 = './tests/test_data/file1.json'
+path_2 = './tests/test_data/file2.json'
+path_1_y, path_2_y = './tests/test_data/file1.yaml', './tests/test_data/file2.yaml'
+new_path_1, new_path_2 = './tests/test_data/new_file1.yaml', './tests/test_data/new_file2.yaml'
 
 
 def test_gendiff_json():
@@ -211,7 +211,6 @@ def test_gendiff_format_json():
 
 
 def test_gendiff():
-    """test функции gendiff"""
     assert generate_diff(new_path_1, new_path_2) == """{
     common: {
       + follow: false

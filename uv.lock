@@ -100,28 +100,26 @@ name = "hexlet-code"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "prompt" },
+    { name = "pytest-cov" },
     { name = "pyyaml" },
 ]
 
 [package.dev-dependencies]
 dev = [
     { name = "pytest" },
-    { name = "pytest-cov" },
     { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "prompt", specifier = ">=0.4.1" },
-    { name = "pyyaml" },
+    { name = "pytest-cov", specifier = ">=6.1.1" },
+    { name = "pyyaml", specifier = ">=6.0.2" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "pytest", specifier = ">=9.0.3" },
-    { name = "pytest-cov" },
-    { name = "ruff" },
+    { name = "pytest", specifier = ">=8.3.5" },
+    { name = "ruff", specifier = ">=0.11.8" },
 ]
 
 [[package]]
@@ -149,15 +147,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz", hash = "sha256:7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3", size = 69412, upload-time = "2025-05-15T12:30:07.975Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl", hash = "sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746", size = 20538, upload-time = "2025-05-15T12:30:06.134Z" },
-]
-
-[[package]]
-name = "prompt"
-version = "0.4.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a6/f1/f550fffbdbe3ca55591d2c34f7d561ee8126a2e4f0b402a84860a31a5f68/prompt-0.4.1.tar.gz", hash = "sha256:8a7694b88f8c65188a983315e72582bf42fcc251b97042be1d2a2ad1aa0ebe0e", size = 6500, upload-time = "2017-06-05T17:01:13.381Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/de/2a/baf04fe6bef0b73666fd891db1c395813ee9691f949ae4b42500dc440adb/prompt-0.4.1-py3-none-any.whl", hash = "sha256:98527de8dc3f0aa29669a39fbffeaf578ba6654dc836f737b6a5c6f9279002b7", size = 7149, upload-time = "2017-06-05T17:01:11.702Z" },
 ]
 
 [[package]]

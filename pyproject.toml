@@ -5,8 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "prompt>=0.4.1",
-    "pyyaml"
+    "pytest-cov>=6.1.1",
+    "pyyaml>=6.0.2",
 ]
 
 [build-system]
@@ -18,22 +18,12 @@ packages = ["gendiff"]
 
 [dependency-groups]
 dev = [
-    "pytest>=9.0.3",
-    "ruff",
-    "pytest-cov"
+    "pytest>=8.3.5",
+    "ruff>=0.11.8",
 ]
 
 
 [project.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
-read-file = "gendiff.scripts.read_file:read_file"
 
-[tool.pytest.ini_options]
-minversion = "6.0"
-testpaths = ["tests"]
-python_files = ["test_*.py", "*_test.py"]
-python_functions = ['test_*']
-addopts = [
-  "-vv",
-  "--import-mode=importlib"
-]
+

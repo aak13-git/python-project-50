@@ -1,7 +1,7 @@
 install:
 	uv sync
 
-gendiff:
+run:
 	uv run gendiff
 
 build:
@@ -11,7 +11,7 @@ package-install:
 	uv tool install --force dist/*.whl
 
 lint:
-	uv run ruff check
+	uv run ruff check gendiff
 
 check:
 	uv run ruff check
