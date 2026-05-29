@@ -1,11 +1,20 @@
+from pathlib import Path
+
 from gendiff.scripts.gendiff import generate_diff
 
-path_1 = './tests/test_data/file1.json'
-path_2 = './tests/test_data/file2.json'
-path_1_y = './tests/test_data/file1.yaml'
-path_2_y = './tests/test_data/file2.yaml'
-new_path_1 = './tests/test_data/new_file1.yaml'
-new_path_2 = './tests/test_data/new_file2.yaml'
+BASE_DIR = Path(__file__).resolve().parent
+path_1 = str(BASE_DIR / 'test_data' / 'file1.json')
+path_2 = str(BASE_DIR / 'test_data' / 'file2.json')
+path_1_y = str(BASE_DIR / 'test_data' / 'file1.yaml')
+path_2_y = str(BASE_DIR / 'test_data' / 'file2.yaml')
+new_path_1 = str(BASE_DIR / 'test_data' / 'new_file1.yaml')
+new_path_2 = str(BASE_DIR / 'test_data' / 'new_file2.yaml')
+# path_1 = './tests/test_data/file1.json'
+# path_2 = './tests/test_data/file2.json'
+# path_1_y = './tests/test_data/file1.yaml'
+# path_2_y = './tests/test_data/file2.yaml'
+# new_path_1 = './tests/test_data/new_file1.yaml'
+# new_path_2 = './tests/test_data/new_file2.yaml'
 
 
 def test_gendiff_json():
