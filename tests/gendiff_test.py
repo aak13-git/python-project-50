@@ -16,6 +16,7 @@ def test_generate_diff(file_path1, file_path2, expected_result):
     expected = read_file(expected_result)
     diff_lines = [line.rstrip() for line in diff.splitlines() if line.strip()]
     expected_lines = [line.rstrip() for line in expected.splitlines() if line.strip()]
+
     assert diff_lines == expected_lines
 
 
@@ -31,6 +32,7 @@ def test_generate_diff_plain(file_path1, file_path2, expected_result):
     expected = read_file(expected_result)
     diff_lines = [line.rstrip() for line in diff.splitlines() if line.strip()]
     expected_lines = [line.rstrip() for line in expected.splitlines() if line.strip()]
+
     assert diff_lines == expected_lines
 
 
@@ -46,5 +48,6 @@ def test_generate_diff_json(file_path1, file_path2, expected_result):
     expected = read_file(expected_result)
     diff_lines = [line.rstrip() for line in diff.splitlines() if line.strip()]
     expected_lines = [line.rstrip() for line in expected.splitlines() if line.strip()]
+
     assert diff_lines == expected_lines
 
