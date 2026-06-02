@@ -21,7 +21,7 @@ def read_file(path: str):
             return file.read()
 
 
-if __name__ == '__main__':
-
-    path = str(input('Введите путь до файла: '))
-    read_file(path)
+# if __name__ == '__main__':
+#
+#     path = str(input('Введите путь до файла: '))
+#     read_file(path)
