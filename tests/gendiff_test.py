@@ -14,9 +14,12 @@ from gendiff.scripts.read_file import read_file
 def test_generate_diff(file_path1, file_path2, expected_result):
     diff = generate_diff(file_path1, file_path2)
     expected = read_file(expected_result)
-    diff_lines = [line.rstrip() for line in diff.splitlines() if line.strip()]
-    expected_lines = [line.rstrip() for line in expected.splitlines() if line.strip()]
-
+    diff_lines = [
+      line.rstrip() for line in diff.splitlines() if line.strip()
+    ]
+    expected_lines = [
+      line.rstrip() for line in expected.splitlines() if line.strip()
+    ]
     assert diff_lines == expected_lines
 
 
@@ -30,9 +33,12 @@ def test_generate_diff(file_path1, file_path2, expected_result):
 def test_generate_diff_plain(file_path1, file_path2, expected_result):
     diff = generate_diff(file_path1, file_path2, format_name="plain")
     expected = read_file(expected_result)
-    diff_lines = [line.rstrip() for line in diff.splitlines() if line.strip()]
-    expected_lines = [line.rstrip() for line in expected.splitlines() if line.strip()]
-
+    diff_lines = [
+      line.rstrip() for line in diff.splitlines() if line.strip()
+    ]
+    expected_lines = [
+      line.rstrip() for line in expected.splitlines() if line.strip()
+    ]
     assert diff_lines == expected_lines
 
 
@@ -46,8 +52,11 @@ def test_generate_diff_plain(file_path1, file_path2, expected_result):
 def test_generate_diff_json(file_path1, file_path2, expected_result):
     diff = generate_diff(file_path1, file_path2, format_name="json")
     expected = read_file(expected_result)
-    diff_lines = [line.rstrip() for line in diff.splitlines() if line.strip()]
-    expected_lines = [line.rstrip() for line in expected.splitlines() if line.strip()]
-
+    diff_lines = [
+      line.rstrip() for line in diff.splitlines() if line.strip()
+    ]
+    expected_lines = [
+      line.rstrip() for line in expected.splitlines() if line.strip()
+    ]
     assert diff_lines == expected_lines
 
