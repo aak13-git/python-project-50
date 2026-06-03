@@ -38,6 +38,6 @@ def format_plain(diff_tree, parent_path=''):
             )
 
         elif status == 'same':
-            pass
+            continue
 
     return lines

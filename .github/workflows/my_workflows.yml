@@ -1,31 +1,28 @@
-name: hexlet-check
+name: Python CI
 
 on:
-  push:
-    branches:
-      - '**'
-    tags:
-      - '**'
+  - push
+  - pull_request
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
-            python-version: '3.12'
+          python-version: '3.12'
       - name: Install dependencies
         run: |
-            pip install uv
-            make install
+          pip install uv
+          make install
       - name: Run linter and pytest
         run: |
-            make check
+          make check
       - name: Run test coverage
         run: |
-            make test-coverage
+          make test-coverage
 
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995
