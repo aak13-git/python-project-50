@@ -1,5 +1,5 @@
 install:
-	uv sync
+	uv sync --frozen
 
 run:
 	uv run gendiff
