@@ -15,7 +15,7 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: |
-          pip install uv
+          pip install uv --only-binary :all: uv==0.6.0
           make install
       - name: Run linter and pytest
         run: |
