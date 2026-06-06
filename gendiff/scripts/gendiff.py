@@ -1,9 +1,9 @@
 import argparse
 
-from gendiff.scripts.json import format_json
-from gendiff.scripts.plain import format_plain
-from gendiff.scripts.read_file import read_file
-from gendiff.scripts.stylish import stylish
+from gendiff.formatters.json import format_json
+from gendiff.formatters.plain import format_plain
+from gendiff.formatters.read_file import read_file
+from gendiff.formatters.stylish import stylish
 
 
 def main():
